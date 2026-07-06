@@ -23,7 +23,7 @@ export async function customFetch(endpoint, options = {}) {
     const data = isJson ? await response.json() : await response.text();
 
     if (!response.ok) {
-      const errorMsg = (data && data.message) || response.statusText || "Something went wrong";
+      const errorMsg = (data && data.error) || (data && data.message) || response.statusText || "Something went wrong";
       throw new Error(errorMsg);
     }
 

@@ -22,11 +22,11 @@ export default function Login() {
     } else if (!/\S+@\S+\.\S+/.test(email)) {
       errors.email = 'Email address is invalid';
     }
-    
+
     if (!password) {
       errors.password = 'Password is required';
     }
-    
+
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
   };
@@ -46,7 +46,7 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
-    
+
     setError('');
     setLoading(true);
     try {
@@ -98,26 +98,26 @@ export default function Login() {
                 </button>
                 <div className="_social_login_content_bottom_txt _mar_b40"> <span>Or</span>
                 </div>
-                
+
                 {error && (
                   <div className="alert alert-danger" role="alert" style={{ fontSize: '14px', padding: '10px' }}>
                     {error}
                   </div>
                 )}
-                
+
                 <form className="_social_login_form" onSubmit={handleSubmit}>
                   <div className="row">
                     <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                       <div className="_social_login_form_input _mar_b14">
                         <label className="_social_login_label _mar_b8">Email <span className="text-danger">*</span></label>
-                        <input 
-                          type="email" 
+                        <input
+                          type="email"
                           placeholder="Enter your email"
                           className={`form-control _social_login_input ${formErrors.email ? 'is-invalid' : ''}`}
                           value={email}
                           onChange={(e) => {
                             setEmail(e.target.value);
-                            if (formErrors.email) setFormErrors({...formErrors, email: null});
+                            if (formErrors.email) setFormErrors({ ...formErrors, email: null });
                           }}
                         />
                         {formErrors.email && (
@@ -130,14 +130,14 @@ export default function Login() {
                     <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                       <div className="_social_login_form_input _mar_b14">
                         <label className="_social_login_label _mar_b8">Password <span className="text-danger">*</span></label>
-                        <input 
-                          type="password" 
+                        <input
+                          type="password"
                           placeholder="Enter your password"
                           className={`form-control _social_login_input ${formErrors.password ? 'is-invalid' : ''}`}
                           value={password}
                           onChange={(e) => {
                             setPassword(e.target.value);
-                            if (formErrors.password) setFormErrors({...formErrors, password: null});
+                            if (formErrors.password) setFormErrors({ ...formErrors, password: null });
                           }}
                         />
                         {formErrors.password && (
@@ -164,7 +164,7 @@ export default function Login() {
                   <div className="row">
                     <div className="col-lg-12 col-md-12 col-xl-12 col-sm-12">
                       <div className="_social_login_form_btn _mar_t40 _mar_b60">
-                        <button type="submit" className="_social_login_form_btn_link _btn1" disabled={loading}>
+                        <button type="submit" className=" _social_login_form_btn_link _btn1" disabled={loading}>
                           {loading ? 'Logging in...' : 'Login now'}
                         </button>
                       </div>
