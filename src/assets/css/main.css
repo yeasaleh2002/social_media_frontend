@@ -1918,6 +1918,7 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    gap: 16px;
 }
 ._feed_inner_timeline_reaction_link {
     border-radius: 6px;
