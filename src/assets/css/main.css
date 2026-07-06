@@ -1617,11 +1617,19 @@
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 ._feed_inner_text_area_item {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+}
+._feed_inner_text_area_btn {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
 }
 ._feed_common {
     display: -webkit-box;
